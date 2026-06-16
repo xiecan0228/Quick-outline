@@ -1,0 +1,9 @@
+{
+  "name": "com.quickoutline.pro",
+  "version": "1.0.0",
+  "displayName": "Quick Outline Pro",
+  "description": "One-click runtime outline highlighting for Unity 6.3 LTS across Built-in, URP, HDRP, Mobile, WebGL, and Playable Ads.",
+  "unity": "6000.3",
+  "keywords": ["outline", "highlight", "hover", "click", "urp", "hdrp", "mobile"],
+  "author": { "name": "Quick Outline Pro" }
+}
