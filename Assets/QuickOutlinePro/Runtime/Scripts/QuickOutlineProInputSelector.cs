@@ -26,31 +26,28 @@ namespace QuickOutlinePro
         {
             QuickOutlinePro hit = RaycastOutline();
             if (hit == currentHover) return;
-            if (currentHover != null && currentHover.Mode == QuickOutlinePro.HighlightMode.Hover) currentHover.SetHoverState(false);
+            if (currentHover != null && currentHover.Mode == QuickOutlinePro.HighlightMode.Hover) currentHover.Visible = false;
             currentHover = hit;
             if (currentHover != null)
             {
                 currentHover.Mode = QuickOutlinePro.HighlightMode.Hover;
                 currentHover.Visible = true;
-                currentHover.SetHoverState(true);
             }
         }
 
         private void UpdateClick()
         {
             QuickOutlinePro hit = RaycastOutline();
-            if (!clickToggles && currentClick != null) currentClick.SetClickState(false);
+            if (!clickToggles && currentClick != null) currentClick.SetHighlighted(false);
             if (hit == null) return;
             if (clickToggles && hit == currentClick)
             {
-                hit.SetClickState(false);
+                hit.SetHighlighted(false);
                 currentClick = null;
                 return;
             }
             currentClick = hit;
-            currentClick.Mode = QuickOutlinePro.HighlightMode.Click;
-            currentClick.Visible = true;
-            currentClick.SetClickState(true);
+            currentClick.SetHighlighted(true);
         }
 
         private QuickOutlinePro RaycastOutline()
